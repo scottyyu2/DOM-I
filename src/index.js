@@ -44,9 +44,11 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
 console.log('project wired!')
 
 //nav
-//const nav = document.querySelectorAll('nav a');
-//nav[0].textContent = siteContent['main-content']['nav']['nav-content'];
-
+const nav = document.querySelectorAll('header nav a')
+const navText = Object.values(siteContent.nav)
+nav.forEach((link, idx)=>{
+  link.textContent = navText[idx]
+})
 
 //cta
 const ctaText = document.querySelector('.cta-text h1');
@@ -74,8 +76,15 @@ pBottom[1].textContent = siteContent['main-content']['product-content'];
 pBottom[2].textContent = siteContent['main-content']['vision-content'];
 
 //contact
-//const contanct = document.querySelector('.contact');
-//contact.textContent = siteContent['main-content'][]
+const contact = document.querySelector('.contact')
+contact.querySelector('h4').textContent = siteContent.contact['contact-h4']
+contact.children[1].textContent = siteContent.contact['address']
+contact.querySelector('p:nth-of-type(2').textContent = siteContent.contact['phone']
+contact.children[3].textContent = siteContent.contact['email']
+
+//footer
+const footer = document.querySelector('footer a')
+footer.textContent = siteContent['footer']['copyright']
 
 //img
 const logo = document.querySelector('#logo-img');
